@@ -630,6 +630,8 @@ test("Data is fetched when a season is selected", async () => {
 
     expect(screen.getByText(/select a season/i)).toBeInTheDocument()
     userEvent.selectOptions(screen.getByText(/select a season/i))
+    // screen.debug()
     userEvent.click(screen.getByText(/season 3/i))
-    screen.debug()
+    // screen.debug()
+    expect(screen.getAllByText(/chapter/i)).toHaveLength(8)
 })
